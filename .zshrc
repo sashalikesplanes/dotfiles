@@ -1,11 +1,6 @@
-source ~/.secrets
-
-path+=('/Users/sasha/Documents/code/scripts')
-path+=('/Users/sasha/.emacs.d/bin')
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
 export PATH
 
-export ruv2="root@10.254.239.1"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -19,7 +14,6 @@ function gpp() { git pull; git push; }
 function gpul() { git pull; }
 function gpus() { git push; }
 
-export -f
 function tmux_select_session() {
   local session
   session=$(tmux list-sessions -F '#{session_name}' | fzf --prompt="Select a session: " --exact --preview="tmux list-windows -t {}" --preview-window=up:2)
