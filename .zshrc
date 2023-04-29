@@ -8,6 +8,7 @@ fi
 # Disable animations in gnome
 gsettings set org.gnome.desktop.interface enable-animations false
 
+
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
 export PATH
 
@@ -16,23 +17,8 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export LIBFREENECT2_INSTALL_PREFIX="/usr/local/"
-
 # Aliases
-function gacp() { message="${@}"; git add .; git commit -m "$message"; git push; }
-function gpacp() { message="${@}"; git pull; git add .; git commit -m "$message"; git push; }
 function gac() { message="${@}"; git add .; git commit -m "$message"; } 
-function gpp() { git pull; git push; }
-function gpul() { git pull; }
-function gpus() { git push; }
-
-function tmux_select_session() {
-  local session
-  session=$(tmux list-sessions -F '#{session_name}' | fzf --prompt="Select a session: " --exact --preview="tmux list-windows -t {}" --preview-window=up:2)
-  if [[ -n "$session" ]]; then
-    tmux switch-client -t "$session"
-  fi
-}
 
 function makegif() { ffmpeg -i "$1" -filter_complex "[0:v] fps=12,scale=480:-1,split [a] [b];[a] palettegen [p];[b] [p] paletteuse" "$2" }
 
@@ -46,37 +32,7 @@ function ftcr() {
   eval $command
 }
 
-# Easily create TS projects
-newts() {
-  project_name=$1
-  mkdir "$project_name"
-  cd "$project_name" || exit
-
-  yarn init -y
-  yarn add typescript ts-node @types/node --dev
-  yarn tsc --init --rootDir src --outDir lib --esModuleInterop --resolveJsonModule --lib es6,dom --module commonjs --strict
-  mkdir src
-  echo 'console.log("Hello, world!");' > src/index.ts
-  echo -e '{\n "scripts": {\n "start": "ts-node src/index.ts",\n "build": "tsc"\n }\n}' > package-scripts.json
-  jq -s '.[0] * .[1]' package.json package-scripts.json > package-new.json
-  mv package-new.json package.json
-  rm package-scripts.json
-
-  git init
-  echo -e "node_modules/\nlib/\n*.log" > .gitignore
-  git add .
-  git commit -m "Initial commit"
-}
-
-
 alias ya="yarn add"
-alias docker='sudo docker'
-alias add='sudo pacman -S'
-alias mike='pm2 restart mike && pm2 monit'
-alias ducks='du -cks * | sort -rn | head'
-alias ga="git add"
-alias gc="git commit -m"
-alias gst="git status"
 
 alias n="node"
 alias py="python"
@@ -88,9 +44,6 @@ alias cr="cargo run"
 alias cch="cargo check"
 alias cn="cargo new"
 
-alias sssh="ssh sasha@kiselev.lu"
-
-set -o vi
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -186,9 +139,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-# Enable vim mode for command line
-bindkey -v
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/sasha/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sasha/google-cloud-sdk/path.zsh.inc'; fi
@@ -208,3 +158,7 @@ alias confi='/usr/bin/it --it-dir=/Users/sasha/.cf/ --work-tree=/Users/sasha'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Enable vim mode for command line
+bindkey -v
+alias ls="lsd"
