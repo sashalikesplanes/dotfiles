@@ -33,6 +33,7 @@ function ftcr() {
 }
 
 alias ya="yarn add"
+alias fucking="sudo"
 
 alias n="node"
 alias py="python"
