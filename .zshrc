@@ -38,12 +38,6 @@ alias n="node"
 alias py="python"
 alias v="nvim"
 
-# Rust
-alias cb="cargo build"
-alias cr="cargo run"
-alias cch="cargo check"
-alias cn="cargo new"
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -110,6 +104,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+# Load the catpuccin theme
+source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 plugins=(pyenv zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
@@ -162,3 +159,9 @@ alias confi='/usr/bin/it --it-dir=/Users/sasha/.cf/ --work-tree=/Users/sasha'
 # Enable vim mode for command line
 bindkey -v
 alias ls="lsd"
+
+# Set catpuccin mocha theme
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
