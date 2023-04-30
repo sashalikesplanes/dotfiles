@@ -1,11 +1,13 @@
 -- All the plugins which do not deserve their own file
 return {
   {
-    "folke/tokyonight.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme tokyonight-night]])
+      vim.opt.termguicolors = true
+      vim.cmd([[colorscheme catppuccin-mocha]])
     end,
   },
   {
@@ -60,8 +62,11 @@ return {
     },
   },
   { 'tpope/vim-commentary' },
-  { 'j-hui/fidget.nvim', config = function () require('fidget').setup({}) end },
-  { 'MunifTanjim/prettier.nvim', config = function ()
-    require('prettier').setup()
-  end}
+  { 'j-hui/fidget.nvim',   config = function() require('fidget').setup({}) end },
+  {
+    'MunifTanjim/prettier.nvim',
+    config = function()
+      require('prettier').setup()
+    end
+  }
 }
