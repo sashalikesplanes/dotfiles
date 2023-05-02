@@ -19,6 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Aliases
 function gac() { message="${@}"; git add .; git commit -m "$message"; } 
+alias gst="git status"
 
 function makegif() { ffmpeg -i "$1" -filter_complex "[0:v] fps=12,scale=480:-1,split [a] [b];[a] palettegen [p];[b] [p] paletteuse" "$2" }
 
@@ -159,8 +160,9 @@ alias confi='/usr/bin/it --it-dir=/Users/sasha/.cf/ --work-tree=/Users/sasha'
 
 # Enable vim mode for command line
 bindkey -v
+# Replacements for standard tools
 alias ls="lsd"
-
+alias cat="batcat"
 # Set catpuccin mocha theme
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
