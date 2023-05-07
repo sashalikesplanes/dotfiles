@@ -35,10 +35,12 @@ function ftcr() {
 alias rust="evcxr"
 alias ya="yarn add"
 alias fucking="sudo"
+alias ta="tmux a && clear && btop"
 
 alias n="node"
 alias py="python"
 alias v="nvim"
+alias cloc="tokei"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
