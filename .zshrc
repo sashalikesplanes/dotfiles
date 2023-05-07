@@ -8,7 +8,6 @@ fi
 # Disable animations in gnome
 gsettings set org.gnome.desktop.interface enable-animations false
 
-
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
 export PATH
 
@@ -33,6 +32,7 @@ function ftcr() {
   eval $command
 }
 
+alias rust="evcxr"
 alias ya="yarn add"
 alias fucking="sudo"
 
