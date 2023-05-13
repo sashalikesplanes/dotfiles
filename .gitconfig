@@ -1,0 +1,16 @@
+[credential]
+	helper = 
+	helper = /usr/local/bin/git-credential-manager
+	credentialStore = secretservice
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[user]
+	name = Sasha Kiselev
+	email = sdkiselev1812+github@gmail.com
+[init]
+	defaultBranch = master
+[push]
+	autoSetupRemote = true
+[alias]
+  ac = "!f(){ git add . && git commit -m \"$1\"; };f"
+  acp = "!f(){ git add . && git commit -m \"$1\"; git push; };f"
