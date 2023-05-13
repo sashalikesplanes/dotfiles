@@ -13,4 +13,7 @@
 	autoSetupRemote = true
 [alias]
   ac = "!f(){ git add . && git commit -m \"$1\"; };f"
+  asc = "!f(){ git add \"$1\" && git commit -m \"$2\"; };f"
   acp = "!f(){ git add . && git commit -m \"$1\"; git push; };f"
+  ascp = "!f(){ git add \"$1\" && git commit -m \"$2\"; git push; };f"
+  st = "status"
