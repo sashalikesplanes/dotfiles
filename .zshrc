@@ -17,7 +17,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 export ZSH="$HOME/.oh-my-zsh"
 
 # Aliases
-function gac() { message="${@}"; git add .; git commit -m "$message"; } 
 alias gst="git status"
 
 function makegif() { ffmpeg -i "$1" -filter_complex "[0:v] fps=12,scale=480:-1,split [a] [b];[a] palettegen [p];[b] [p] paletteuse" "$2" }
@@ -35,7 +34,7 @@ function ftcr() {
 alias rust="evcxr"
 alias ya="yarn add"
 alias fucking="sudo"
-alias ta="tmux a && clear && btop"
+alias ta="tmux a && clear && neofetch"
 
 alias n="node"
 alias py="python"
