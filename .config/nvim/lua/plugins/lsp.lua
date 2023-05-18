@@ -19,6 +19,8 @@ return {
     { 'hrsh7th/nvim-cmp' },     -- Required
     { 'hrsh7th/cmp-nvim-lsp' }, -- Required
     { 'L3MON4D3/LuaSnip' },     -- Required
+    -- Rust tools
+    { 'simrat39/rust-tools.nvim' },
   },
   config = function()
     local lsp = require('lsp-zero').preset({})
@@ -64,5 +66,17 @@ return {
       root_dir = lspconfig.util.root_pattern('.git'),
     }
     lsp.setup()
+
+    -- Setup rust tools
+    local rt = require('rust-tools')
+    rt.setup({
+      server = {
+        on_attach = function(_, bufnr)
+          -- Hover actions
+          vim.keymap.set("n", "<C-a>", rt.hover_actions.hover_actions, { buffer = bufnr })
+          -- Code action groups
+        end,
+      },
+    })
   end,
 }
