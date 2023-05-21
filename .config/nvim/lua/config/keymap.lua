@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 -- Exit terinal with <esc><exc>
 vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>")
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "[P]roject [V]iew" })
 
 -- Use <leader>w instead of <C-w>
 vim.keymap.set("n", "<C-w>|", "<C-w>v", { desc = "Horizontal [S]plit" })

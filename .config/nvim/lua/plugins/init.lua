@@ -7,6 +7,14 @@ return {
     priority = 1000,
     config = function()
       vim.opt.termguicolors = true
+      require('catppuccin').setup({
+        transparent_background = true,
+        integrations = {
+          harpoon = true,
+          vimwiki = true,
+          fidget = true,
+        }
+      })
       vim.cmd([[colorscheme catppuccin-mocha]])
     end,
   },
@@ -62,7 +70,7 @@ return {
     },
   },
   { 'tpope/vim-commentary' },
-  { 'j-hui/fidget.nvim',   config = function() require('fidget').setup({}) end },
+  { 'j-hui/fidget.nvim',   config = function() require('fidget').setup({ window = { blend = 0 } }) end },
   {
     'MunifTanjim/prettier.nvim',
     config = function()
@@ -82,6 +90,15 @@ return {
           ext = '.md'
         }
       }
+    end
+  },
+  {
+    'stevearc/oil.nvim',
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("oil").setup()
+      vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
+      vim.keymap.set("n", "<leader>pv", require("oil").open, { desc = "Open parent directory" })
     end
   }
 }
