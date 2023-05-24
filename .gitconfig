@@ -4,6 +4,8 @@
 	credentialStore = secretservice
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[core]
+  editor = nvim
 [user]
 	name = Sasha Kiselev
 	email = sdkiselev1812+github@gmail.com

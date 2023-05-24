@@ -96,9 +96,19 @@ return {
     'stevearc/oil.nvim',
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("oil").setup()
+      require("oil").setup({
+        keymaps = {
+          ["<CR>"] = "actions.select",
+          ["<C-p>"] = "actions.preview",
+          ["<C-c>"] = "actions.close",
+          ["-"] = "actions.parent",
+          ["."] = "actions.toggle_hidden",
+          ["`"] = "actions.cd",
+        }
+      })
       vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
       vim.keymap.set("n", "<leader>pv", require("oil").open, { desc = "Open parent directory" })
     end
-  }
+  },
+  { 'nvim-tree/nvim-tree.lua', config = function () require("nvim-tree").setup() end}
 }

@@ -4,6 +4,8 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+vim.opt.clipboard = "unnamedplus"
+
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
@@ -25,7 +27,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "120"
+-- vim.opt.colorcolumn = "120"
 vim.g.mapleader = " "
 
 vim.opt.hidden = false

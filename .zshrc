@@ -39,6 +39,8 @@ alias ta="tmux a && clear && neofetch"
 alias n="node"
 alias py="python"
 alias v="nvim"
+alias v.="nvim ."
+alias :q="exit"
 alias cloc="tokei"
 
 # Set name of the theme to load --- if set to "random", it will
