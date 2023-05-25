@@ -43,6 +43,11 @@ return {
       nmap('<leader>wl', function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       end, '[W]orkspace [L]ist Folders')
+      nmap('<leader>lr', function ()
+        vim.lsp.stop_client(vim.lsp.get_active_clients())
+        -- this needs a timeout for some reason 
+        vim.defer_fn(function() vim.cmd('edit') end, 100)
+      end, '[L]SP [R]estart')
 
       -- See `:help K` for why this keymap
       nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
