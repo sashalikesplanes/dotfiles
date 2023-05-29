@@ -68,7 +68,6 @@ return {
     lspconfig.tsserver.setup {
       cmd = { "typescript-language-server", "--stdio" },
       filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-      root_dir = lspconfig.util.root_pattern('.git'),
     }
     lsp.setup()
 
