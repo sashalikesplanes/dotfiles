@@ -39,3 +39,10 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("n", "<leader>D", vim.diagnostic.open_float, { desc = "Float [D]iagnostic" })
+
+-- Cycle buffers with <tab>
+vim.keymap.set("n", "<tab>", ":bnext<CR>", { desc = "Next Buffer" })
+vim.keymap.set("n", "<S-tab>", ":bprevious<CR>", { desc = "Previous Buffer" })
+
+-- Close buffer with <leader>q
+vim.keymap.set("n", "<leader>q", ":bdelete<CR>", { desc = "Close Buffer" })

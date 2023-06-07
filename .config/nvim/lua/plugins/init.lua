@@ -110,5 +110,6 @@ return {
       vim.keymap.set("n", "<leader>pv", require("oil").open, { desc = "Open parent directory" })
     end
   },
-  { 'nvim-tree/nvim-tree.lua', config = function () require("nvim-tree").setup() end}
+  { 'nvim-tree/nvim-tree.lua', config = function() require("nvim-tree").setup() end },
+  -- { 'Bekaboo/dropbar.nvim' }
 }

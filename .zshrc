@@ -36,12 +36,14 @@ alias ya="yarn add"
 alias fucking="sudo"
 alias ta="tmux a && clear && neofetch"
 
+alias g="git"
 alias n="node"
 alias py="python"
 alias v="nvim"
 alias v.="nvim ."
 alias :q="exit"
 alias cloc="tokei"
+alias tf="terraform"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -149,6 +151,9 @@ if [ -f '/Users/sasha/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sasha/goo
 if [ -f '/Users/sasha/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sasha/google-cloud-sdk/completion.zsh.inc'; fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Bob the neovim version manager
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
