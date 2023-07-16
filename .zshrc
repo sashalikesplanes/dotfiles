@@ -44,6 +44,7 @@ alias v.="nvim ."
 alias :q="exit"
 alias cloc="tokei"
 alias tf="terraform"
+alias nx="NX_DAEMON=false yarn nx"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -168,6 +169,7 @@ alias confi='/usr/bin/it --it-dir=/Users/sasha/.cf/ --work-tree=/Users/sasha'
 
 # Enable vim mode for command line
 bindkey -v
+bindkey -M viins 'jk' vi-cmd-mode
 # Replacements for standard tools
 alias ls="lsd"
 alias cat="batcat"
@@ -353,3 +355,5 @@ _doctl()
 if [ "$funcstack[1]" = "_doctl" ]; then
     _doctl
 fi
+
+export EDITOR="nvim"
