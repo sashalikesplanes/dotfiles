@@ -1,7 +1,7 @@
 [credential]
 	helper = 
 	helper = /usr/local/bin/git-credential-manager
-	credentialStore = secretservice
+	credentialStore = keychain
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [core]
