@@ -7,7 +7,7 @@ return {
     config = function()
       vim.opt.termguicolors = true
       require("catppuccin").setup({
-        flavour = "mocha",
+        flavour = "frappe",
         transparent_background = true,
         integrations = {
           harpoon = true,

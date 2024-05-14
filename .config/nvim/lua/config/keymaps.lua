@@ -48,3 +48,22 @@ vim.keymap.set("n", "<S-tab>", ":bprevious<CR>", { desc = "Previous Buffer" })
 
 -- Close buffer with <leader>q
 vim.keymap.set("n", "<leader>q", ":bdelete<CR>", { desc = "Close Buffer" })
+vim.keymap.set("n", "<C-h>", ":NvimTmuxNavigateLeft<CR>", { desc = "Navigate [L]eft" })
+vim.keymap.set("n", "<C-j>", ":NvimTmuxNavigateDown<CR>", { desc = "Navigate [D]own" })
+vim.keymap.set("n", "<C-k>", ":NvimTmuxNavigateUp<CR>", { desc = "Navigate [U]p" })
+vim.keymap.set("n", "<C-l>", ":NvimTmuxNavigateRight<CR>", { desc = "Navigate [R]ight" })
+vim.keymap.set("n", "<leader>gg", ":Git<cr>", { desc = "Open [G]it" })
+vim.keymap.set("n", "<leader><space>", function()
+  require("telescope.builtin").find_files({
+    cwd = vim.fn.getcwd(),
+    hidden = true,
+    follow = true,
+  })
+end, { desc = "Find files" })
+vim.keymap.set("n", "<leader>sg", function()
+  require("telescope.builtin").live_grep({
+    cwd = vim.fn.getcwd(),
+    hidden = true,
+    follow = true,
+  })
+end, { desc = "Live grep" })

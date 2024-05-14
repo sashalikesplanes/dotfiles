@@ -5,11 +5,7 @@ return {
     enabled = false,
   },
   {
-    "rcarriga/nvim-notify",
-    enabled = false,
-  },
-  {
-    "folke/noice.nvim",
+    "kdheepak/lazygit.nvim",
     enabled = false,
   },
 }
