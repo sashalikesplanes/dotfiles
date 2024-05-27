@@ -6,9 +6,9 @@ return {
       keybindings = {
         left = "<C-h>",
         down = "<C-j>",
-        up = "<C-k>",
         right = "<C-l>",
         last_active = "<C-\\>",
+        up = "<C-k>",
         next = "<C-Space>",
       },
     })
