@@ -8,8 +8,4 @@ return {
     "kdheepak/lazygit.nvim",
     enabled = false,
   },
-  {
-    "zbirenbaum/copilot-cmp",
-    enabled = false,
-  },
 }
